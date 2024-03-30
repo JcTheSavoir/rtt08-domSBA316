@@ -17,14 +17,47 @@
 
         <!-- middleSectionContainer -->
         <div class="middleSectionContainer">
-            <h3 class="middleSectionTitle">First Step, write down 5 basic ideas</h3>
-            <ul class="middleListIdeas">
-                <li class="firstListIdea">Build a quiz type game. (personality test, you think you know [blank] show?, etc)  </li>
-                <li class="secondListIdea">A sales page (local buisness, your own business, or madeup one)</li>
-                <li class="thirdListIdea">Page that links to past projects you've worked on.  You can include navigation and brief description for each one.</li>
-                <li class="fourthListIdea">Organizational helper (listing chores to do, scheduling due dates, to-buy list, etc)</li>
-                <li class="fifthListIdea">A "how to" page of starting a programming journey. Could have a dropdown list for picking languages or type of jobs, with explanations on how to start and links to resources</li>
-            </ul>
+            <div class="midIdeasSection"></div>
+                <h3 class="midIdeasTitle">First Step, write down 5 basic ideas</h3>
+                <!-- for the example of ideas -->
+                <ul class="midIdeasList">
+                    <li class="firstIdea">Build a quiz type game. (personality test, you think you know [blank] show?, etc)  </li>
+                    <li class="secondIdea">A sales page (local buisness, your own business, or madeup one)</li>
+                    <li class="thirdIdea">Page that links to past projects you've worked on.  You can include navigation and brief description for each one.</li>
+                    <li class="fourthIdea">Organizational helper (listing chores to do, scheduling due dates, to-buy list, etc)</li>
+                    <li class="fifthIdea">A "how to" page of starting a programming journey. Could have a dropdown list for picking languages or type of jobs, with explanations on how to start and links to resources</li>
+                </ul>
+                <!-- Explanation on how to narrow down the ideas -->
+                <p class="midIdeasExplanation">Now that you have five ideas down, choose four and then three and then two, and finally pick the one you want. Don't take longer than a minute for each step of this.  No second guessing, as there is no wrong answer</p>
+            </div>
+            <!-- Container for the form section of the container -->
+            <div class="midFormSection">
+                <h3 class="midFormTitle">Time to put that idea into action (in a small way)</h3>
+                <p class="midFormSubtitle">Only create one instance of the idea to start, otherwise you may overwhelm yourself. As in you would build one question for your quiz, the top section of your sales page, or a single project and description for a project index page. For this demonstration, we will be doing either the quiz or Organizational Helper example</p>
+                <!-- the form itself, lets user choose an example to show -->
+                <form action="" class="midFormForm">
+                    <fieldset>
+                        <legend>Choose the example you would like to see.</legend>
+                        <input type="radio" id="quizGame" name="example">
+                        <label for="quizGame">Quiz Game?</label>
+                        <input type="radio" id="organizationHelper" name="example">
+                        <label for="organizationHelper">Organizational Helper?</label>
+                        <button type="submit" id="chooseExample">Choose</button>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- this is where the chosen element will be shown to the user -->
+            <div class="midActionSection">
+                <!-- if user picks quiz, it will show this -->
+                <div class="midActionQuiz">
+                    <h4 class="midActionTitle">Which Bleach Character are you?!</h4>
+                    
+                </div>
+                <!-- if user picks the helper, it will show this -->
+                <div class="midActionHelper">
+
+                </div>
+            </div>
         </div>
 
 
