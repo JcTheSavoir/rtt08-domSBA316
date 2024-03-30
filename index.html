@@ -12,15 +12,15 @@
         <!-- mainSectionContainer -->
         <div class="mainSectionConttainer">
             <h1 class="mainTitle">Thinking about what site to build for an SBA project?</h1>
-            <h2 class="mainSubTitle">Well look no further, this page will give you a start.</h2>
+            <h2 class="mainSubTitle">Look no further, this page will give you a start.</h2>
         </div>
 
         <!-- middleSectionContainer -->
-        <div class="middleSectionContainer">
-            <div class="midIdeasSection">
-                <h3 class="midIdeasTitle">First Step, write down 5 basic ideas</h3>
+        <div class="middleSectionContainer"> <!-- Black border -->
+            <div class="midIdeasSection">    <!-- RED border -->
+                <h3 class="midIdeasTitle">First Step, write down 5 basic ideas</h3> <!-- BLUE border-->
                 <!-- for the example of ideas -->
-                <ul class="midIdeasList">
+                <ul class="midIdeasList"> <!-- GREEN border -->
                     <li class="firstIdea">Build a quiz type game. (personality test, you think you know [blank] show?, etc)  </li>
                     <li class="secondIdea">A sales page (local buisness, your own business, or madeup one)</li>
                     <li class="thirdIdea">Page that links to past projects you've worked on.  You can include navigation and brief description for each one.</li>
@@ -31,11 +31,11 @@
                 <p class="midIdeasExplanation">Now that you have five ideas down, choose four and then three and then two, and finally pick the one you want. Don't take longer than a minute for each step of this.  No second guessing, as there is no wrong answer</p>
             </div>
             <!-- Container for the form section of the container -->
-            <div class="midFormSection">
-                <h3 class="midFormTitle">Time to put that idea into action (in a small way)</h3>
+            <div class="midFormSection"> <!-- RED border -->
+                <h3 class="midFormTitle">Time to put that idea into action (in a small way)</h3> <!-- BLUE border -->
                 <p class="midFormSubtitle">Only create one instance of the idea to start, otherwise you may overwhelm yourself. As in you would build one question for your quiz, the top section of your sales page, or a single project and description for a project index page. For this demonstration, we will be doing either the quiz or Organizational Helper example</p>
                 <!-- the form itself, lets user choose an example to show -->
-                <form action="" class="midFormForm">
+                <form action="" class="midFormForm"> <!-- BLUE border -->
                     <fieldset>
                         <legend>Choose the example you would like to see.</legend>
                         <input type="radio" id="quizGame" name="example">
@@ -47,16 +47,42 @@
                 </form>
             </div>
             <!-- this is where the chosen element will be shown to the user -->
-            <div class="midActionSection">
+            <div class="midActionSection"> <!-- RED border -->
                 <!-- if user picks quiz, it will show this -->
-                <div class="midActionQuiz">
-                    <h4 class="midQuizTitle">Which Bleach Character are you?!</h4>
-                    
+                <div class="midActionQuiz"> <!-- BLUE border -->
+                    <h4 class="midQuizTitle">Which Bleach Character are you?!</h4> <!-- GREEN border -->
+                    <!-- Form for the first quiz question for user -->
+                    <form action="" class="midQuizForm"> <!-- GREEN border-->
+                        <fieldset>
+                            <legend>Who is your favorite Character?</legend>
+                            <input type="radio" id="ichigoQuiz" name="bleach">
+                            <label for="ichigoQuiz">Ichigo</label>
+                            <input type="radio" id="uraharaQuiz" name="bleach">
+                            <label for="uraharaQuiz">Urahara</label>
+                            <input type="radio" id="aizenQuiz" name="bleach">
+                            <label for="aizenQuiz">Aizen</label>
+                            <input type="radio" id="tatsukiQuiz" name="bleach">
+                            <label for="tatsukiQuiz">Tatsuki</label>
+                        </fieldset>
+                    </form>
                 </div>
                 <!-- if user picks the helper, it will show this -->
                 <div class="midActionHelper">
                     <h4 class="midHelperTitle">What chores do you need to prioritize?</h4>
-
+                    <!-- form for user adding chores to their to do list -->
+                    <form action="" class="midHelperForm">
+                        <fieldset>
+                            <legend>Write in some of your chores!</legend>
+                            <label for="userChore1">Chore 1:</label>
+                            <input type="text" id="userChore1" name="chores">
+                            <label for="userChore2">Chore 2:</label>
+                            <input type="text" id="userChore2" name="chores">
+                            <label for="userChore3">Chore 3:</label>
+                            <input type="text" id="userChore3" name="chores">
+                            <label for="userChore4">Chore 4:</label>
+                            <input type="text" id="userChore4" name="chores">
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>

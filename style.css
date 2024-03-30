@@ -1,7 +1,7 @@
-body{
-    margin: 0;
+*{
+    margin: 5px;
 }
-h1{
+/* h1{
     margin: 0;
 }
 h2{
@@ -12,7 +12,7 @@ h3{
 }
 h4{
     margin: 0;
-}
+} */
 
 
 .mainSectionConttainer{
@@ -20,7 +20,6 @@ h4{
     display: flex;
     flex-flow:column;
     align-items: center;
-    margin: 0 0 20px 0px;
 }
 .mainTitle{
     border: solid red;
@@ -41,26 +40,24 @@ h4{
 }
 .midIdeasList{
     border: solid blue;
-    margin: 0;
 }
 .firstIdea{
-    border: solid lavender;
+    border: solid green;
 }
 .secondIdea{
-    border: solid lavender;
+    border: solid green;
 }
 .thirdIdea{
-    border: solid lavender;
+    border: solid green;
 }
 .fourthIdea{
-    border: solid lavender;
+    border: solid green;
 }
 .fifthIdea{
-    border: solid lavender;
+    border: solid green;
 }
 .midIdeasExplanation{
     border: solid blue;
-    margin: 10px 0;
 }
 .midFormSection{
     border: solid red;
@@ -72,7 +69,7 @@ h4{
     border: solid blue;
 }
 .midFormForm{
-    border: solid lavender;
+    border: solid blue;
 }
 .midActionSection{
     border: solid red;
@@ -81,11 +78,17 @@ h4{
     border: solid blue;
 }
 .midQuizTitle{
-    border: solid lavender;
+    border: solid green;
+}
+.midQuizForm{
+    border: solid green;
 }
 .midActionHelper{
     border: solid blue;
 }
 .midHelperTitle{
-    border: solid lavender;
+    border: solid green;
+}
+.midHelperForm{
+    border: solid green;
 }
