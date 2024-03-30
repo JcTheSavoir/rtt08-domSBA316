@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+}
+h1{
+    margin: 0;
+}
+h2{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+h4{
+    margin: 0;
+}
+
+
+.mainSectionConttainer{
+    border: solid black;
+    display: flex;
+    flex-flow:column;
+    align-items: center;
+    margin: 0 0 20px 0px;
+}
+.mainTitle{
+    border: solid red;
+}
+.mainSubTitle{
+    border: solid blue;
+}
+.middleSectionContainer{
+    border: solid black;
+    display: flex;
+    flex-flow: column;
+}
+.midIdeasSection{
+    border: solid red;
+}
+.midIdeasTitle{
+    border: solid blue;
+}
+.midIdeasList{
+    border: solid blue;
+    margin: 0;
+}
+.firstIdea{
+    border: solid lavender;
+}
+.secondIdea{
+    border: solid lavender;
+}
+.thirdIdea{
+    border: solid lavender;
+}
+.fourthIdea{
+    border: solid lavender;
+}
+.fifthIdea{
+    border: solid lavender;
+}
+.midIdeasExplanation{
+    border: solid blue;
+    margin: 10px 0;
+}
+.midFormSection{
+    border: solid red;
+}
+.midFormTitle{
+    border: solid blue;
+}
+.midFormSubtitle{
+    border: solid blue;
+}
+.midFormForm{
+    border: solid lavender;
+}
+.midActionSection{
+    border: solid red;
+}
+.midActionQuiz{
+    border: solid blue;
+}
+.midQuizTitle{
+    border: solid lavender;
+}
+.midActionHelper{
+    border: solid blue;
+}
+.midHelperTitle{
+    border: solid lavender;
+}
