@@ -42,11 +42,12 @@
                         <label for="quizGame">Quiz Game?</label>
                         <input type="radio" id="organizationHelper" name="example">
                         <label for="organizationHelper">Organizational Helper?</label>
-                        <button type="submit" id="buttonForm">Choose</button>
+                        <button onclick="generateQuizOrHelper()" id="buttonForm">Choose</button>
                     </fieldset>
                 </form>
             </div>
-            <!-- this is where the chosen element will be shown to the user -->
+
+            <!-- This is the information that will be added via js, based on button above -->
             <div class="midActionSection"> <!-- RED border -->
                 <!-- if user picks quiz, it will show this -->
                 <div class="midActionQuiz"> <!-- BLUE border -->
@@ -63,6 +64,7 @@
                             <label for="aizenQuiz">Aizen</label>
                             <input type="radio" id="tatsukiQuiz" name="bleach">
                             <label for="tatsukiQuiz">Tatsuki</label>
+                            <button click="">Submit</button>
                         </fieldset>
                     </form>
                 </div>
@@ -81,6 +83,7 @@
                             <input type="text" id="userChore3" name="chores">
                             <label for="userChore4">Chore 4:</label>
                             <input type="text" id="userChore4" name="chores">
+                            <button click="">Submit</button>
                         </fieldset>
                     </form>
                 </div>
