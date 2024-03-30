@@ -20,7 +20,33 @@
 //
 
 
-// Button from html, will activate when clicked and user has chosen an example
-const generateQuizOrHelper = () => {
-    
+// --1. Button from html, will activate when clicked and user has chosen an example
+const generateTheQuizOrHelper = () => {
+    //--2. checks if quizGame or organizationHelper radio button is selected.  Sets it to true if selected, false if not.
+    let quizRadio = document.getElementById('quizGame').checked;
+    let helperRadio = document.querySelector('#organizationHelper').checked
+    console.log(quizRadio);
+    console.log(helperRadio);
+    //---2 continued. Each form will have it's own function, and called upon based on which part of the if statement is called
+    if (quizRadio === true) {
+        console.log(`quizGame is selected`);
+        generateQuiz();
+
+    } else if (helperRadio === true) {
+        console.log(`organizationHelper is selected`);
+        generateHelper();
+
+    } else {
+        console.log(`Neither are selected`);
+    }
+}
+
+//-- 3A. Function to create midActionQuiz. 
+const generateQuiz = () => {
+
+}
+
+//-- 3B. Function to create midActionHelper
+const generateHelper = () => {
+
 }
