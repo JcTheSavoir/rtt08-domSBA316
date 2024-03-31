@@ -102,11 +102,83 @@ let middleAction = document.querySelector('.midActionSection')
     quizTitle.setAttribute('class', 'midQuizTitle');
     quizTitle.innerHTML = `Which Bleach Character are you?!`;
 
+    //-----  sets element,attribute, and innerHTML for .midQuizForm
+    let quizForm = document.createElement('form')
+    quizForm.setAttribute('class', 'midQuizForm')
+    
+    //-----  sets element,attribute, and innerHTML for .quizField
+    let qField = document.createElement('fieldset');
+    qField.setAttribute('class', 'quizField');
+
+    //-----  sets element,attribute, and innerHTML for legend tag
+    let leg = document.createElement('legend');
+    leg.innerHTML = 'Who is your favorite Character';
+
+    //-----  sets element,attribute, and innerHTML for #ichigoQuiz
+    let ichigoQ = document.createElement('input')
+    ichigoQ.setAttribute('id', 'ichigoQuiz');
+    ichigoQ.setAttribute('type', 'radio');
+    // ichigoQ.setAtrribute('name', 'bleach');
+
+    //-----  sets element,attribute, and innerHTML for label:ichigoQuiz
+    let ichigoLabel = document.createElement('label');
+    ichigoLabel.setAttribute('for', 'ichigoQuiz');
+    ichigoLabel.innerHTML = 'Ichigo';
+
+    //-----  sets element,attribute, and innerHTML for #uraharaQuiz
+    let uraharaQ = document.createElement('input');
+    uraharaQ.setAttribute('id', 'uraharaQuiz');
+    uraharaQ.setAttribute('type', 'radio');
+    // uraharaQ.setAtrribute('name', 'bleach');
+    
+    //-----  sets element,attribute, and innerHTML for label:uraharQuiz
+    let uraharaLabel = document.createElement('label');
+    uraharaLabel.setAttribute('for', 'uraharaQuiz');
+    uraharaLabel.innerHTML = 'Urahara';
+
+    //-----  sets element,attribute, and innerHTML for #aizenQuiz
+    let aizenQ = document.createElement('input')
+    aizenQ.setAttribute('id', 'aizenQuiz');
+    aizenQ.setAttribute('type', 'radio');
+    // aizenQ.setAtrribute('name', 'bleach');
+
+    //-----  sets element,attribute, and innerHTML for label:aizenQuiz
+    let aizenLabel = document.createElement('label');
+    aizenLabel.setAttribute('for', 'aizenQuiz')
+    aizenLabel.innerHTML = 'Aizen';
+
+    //-----  sets element,attribute, and innerHTML for #tatsukiQuiz
+    let tatsukiQ = document.createElement('input')
+    tatsukiQ.setAttribute('id', 'tatsukiQuiz');
+    tatsukiQ.setAttribute('type', 'radio');
+    // tatsukiQ.setAtrribute('name', 'bleach');
+
+    //-----  sets element,attribute, and innerHTML for label:tatsukiQuiz
+    let tatsukiLabel = document.createElement('label');
+    tatsukiLabel.setAttribute('for', 'tatsukiQuiz');
+    tatsukiLabel.innerHTML = ('Tatsuki');
+
+    //-----  sets element,attribute, and innerHTML for button
+    let quizButton = document.createElement('button');
+    quizButton.setAttribute('type', 'button');
+    quizButton.innerHTML = 'Submit';
+
 //-------Work on how to have this work when midActionSection is not already in html
     //------{APPEND section} 
     middleAction.append(actionQuiz);
     actionQuiz.append(quizTitle);
-
+    actionQuiz.append(quizForm);
+    quizForm.append(qField);
+    qField.append(leg);
+    qField.append(ichigoQ);
+    qField.append(ichigoLabel);
+    qField.append(uraharaQ);
+    qField.append(uraharaLabel);
+    qField.append(aizenQ);
+    qField.append(aizenLabel);
+    qField.append(tatsukiQ);
+    qField.append(tatsukiLabel);
+    qField.append(quizButton)
 }
 
 //-- 3B {function} to create midActionHelper
@@ -131,7 +203,75 @@ let middleAction = document.querySelector('.midActionSection')
     helperTitle.setAttribute('class', 'midHelperTitle');
     helperTitle.innerHTML = `What chores do you need to prioritize?`;     
     
+    //----- sets element,attribute, and innerHTML for .midHelperform
+    let helperForm = document.createElement('id', 'midHelperForm');
+    helperForm.setAttribute('id', 'midHelperForm');
+
+    //----- sets element,attribute, and innerHTML for fieldset tag
+    let hField = document.createElement('fieldset');
+
+    //----- sets element,attribute, and innerHTML for legend tag
+    let helperLegend = document.createElement('legend');
+    helperLegend.innerHTML = 'Write in some of your chores!'
+
+    //----- sets element,attribute, and innerHTML for label:userChore1
+    let labelOne = document.createElement('label');
+    labelOne.setAttribute('for', 'userChores1');
+    labelOne.innerHTML = 'Chore 1:'
+
+    //----- sets element,attribute, and innerHTML for #userChore1
+    let choiceOne = document.createElement('input')
+    choiceOne.setAttribute('type', 'text');
+    choiceOne.setAttribute('id', 'userChore1')
+
+    //----- sets element,attribute, and innerHTML for label:userChore2
+    let labelTwo = document.createElement('label');
+    labelTwo.setAttribute('for', 'userChores2');
+    labelTwo.innerHTML = 'Chore 2:'
+
+    //----- sets element,attribute, and innerHTML for #userChore2
+    let choiceTwo = document.createElement('input')
+    choiceTwo.setAttribute('type', 'text');
+    choiceTwo.setAttribute('id', 'userChore2')
+
+    //----- sets element,attribute, and innerHTML for label:userChore3
+    let labelThree = document.createElement('label');
+    labelThree.setAttribute('for', 'userChores3');
+    labelThree.innerHTML = 'Chore 3:'
+
+    //----- sets element,attribute, and innerHTML for #userChore3
+    let choiceThree = document.createElement('input')
+    choiceThree.setAttribute('type', 'text');
+    choiceThree.setAttribute('id', 'userChore3')
+
+    //----- sets element,attribute, and innerHTML for label:userChore4
+    let labelFour = document.createElement('label');
+    labelFour.setAttribute('for', 'userChores4');
+    labelFour.innerHTML = 'Chore 4:'
+
+    //----- sets element,attribute, and innerHTML for #userChore4
+    let choiceFour = document.createElement('input')
+    choiceFour.setAttribute('type', 'text');
+    choiceFour.setAttribute('id', 'userChore4') 
+
+    //-----  sets element,attribute, and innerHTML for button
+    let helperButton = document.createElement('button');
+    helperButton.setAttribute('type', 'button');
+    helperButton.innerHTML = 'Submit'; 
+
     //------{APPEND section} 
     middleAction.append(actionHelper);
-    actionHelper.append(helperTitle);        
+    actionHelper.append(helperTitle);
+    actionHelper.append(helperForm);
+    helperForm.append(hField);
+    hField.append(helperLegend);
+    hField.append(labelOne);
+    hField.append(choiceOne);
+    hField.append(labelTwo);
+    hField.append(choiceTwo);
+    hField.append(labelThree);
+    hField.append(choiceThree);
+    hField.append(labelFour);
+    hField.append(choiceFour);
+    hField.append(helperButton);
 }
