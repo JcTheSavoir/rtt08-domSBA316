@@ -33,7 +33,8 @@ const generateTheQuizOrHelper = () => {
 // midActionSection will be created inside of the middleSectionContainer
 let midContainer = document.querySelector(`.middleSectionContainer`);
 // forms will be created inside the midActionSection
-// let 
+// let middleAction = document.querySelector('.midActionSection');
+
 
 // 2A {function} check if div.midActionSection is already created.  If it is, do not create.
 const checkForActionSection = () => { //--------after else add "return"
@@ -49,12 +50,14 @@ const checkForActionSection = () => { //--------after else add "return"
         console.log(`midActionSection is not created`);
         // appends divAction to the bottom of .middleSectionContainer
         midContainer.append(divAction)
+        // return true
     } else {
         console.log(`midActionSection is already created`);
+        // return false
     }
 };
 
-// 2B {function} check which form is selected
+//-- 2B {function} check which form is selected
 const checkFormSelected = () => {
     // checks if quizGame or organizationHelper radio button is selected.  Sets it to true if selected, false if not.
     let quizRadio = document.getElementById('quizGame').checked;
@@ -86,10 +89,23 @@ const generateQuiz = () => {
              3A4: {legend} -->
              3A5: {4 inputs; 4 labels}
              3A6: button with an .addeventlistener */
+//----- workaround for "midActionSection" not being referenced outside of it's function
+let middleAction = document.querySelector('.midActionSection')
 
 
+    //----- sets element and attribute for midActionQuiz
+    let actionQuiz = document.createElement('div')
+    actionQuiz.setAttribute('class', 'midActionQuiz')
 
+    //----- sets element,attribute, and innerHTML for .midQuizTitle
+    let quizTitle = document.createElement('h4');
+    quizTitle.setAttribute('class', 'midQuizTitle');
+    quizTitle.innerHTML = `Which Bleach Character are you?!`;
 
+//-------Work on how to have this work when midActionSection is not already in html
+    //------{APPEND section} 
+    middleAction.append(actionQuiz);
+    actionQuiz.append(quizTitle);
 
 }
 
@@ -102,4 +118,20 @@ const generateHelper = () => {
              3B4: {legend} -->
              3B5: {4 labels; 4 inputs}
              3B6: button with an .addeventlistener */
+//----- workaround for "midActionSection" not being referenced outside of it's function
+let middleAction = document.querySelector('.midActionSection')
+
+
+    //----- sets element and attribute for midActionHelper
+    let actionHelper = document.createElement('div')
+    actionHelper.setAttribute('class', 'midActionHelper')
+
+    //----- sets element,attribute, and innerHTML for .midHelperTitle
+    let helperTitle = document.createElement('h4');
+    helperTitle.setAttribute('class', 'midHelperTitle');
+    helperTitle.innerHTML = `What chores do you need to prioritize?`;     
+    
+    //------{APPEND section} 
+    middleAction.append(actionHelper);
+    actionHelper.append(helperTitle);        
 }
