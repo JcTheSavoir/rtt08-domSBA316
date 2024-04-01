@@ -34,14 +34,11 @@ const generateTheQuizOrHelper = () => {
 
 //Have user enter their name, and the name of those helping them create a future project with this page.  
 const yourNames = [];
-console.log(yourNames);
 const addNames = () => {
     yourNames.push(prompt('Enter your name and the name of those that will help you create a webpage in the future'))
-    console.log(yourNames);
 }
 
 const showNames = () => {
-    console.log(yourNames);
     let mainSection = document.querySelector('.mainSectionContainer');
     let namesContainer = document.createElement('div');
     namesContainer.setAttribute('class', 'mainNamesContainer');
@@ -59,27 +56,23 @@ const showNames = () => {
     // This next line calls for the middleSectionContainer by referencing the
     // --> next sibling of div.mainSectionContainer
 let midContainer = document.querySelector('.mainSectionContainer').nextElementSibling;
-console.log(midContainer);
 // forms will be created inside the midActionSection
 // let middleAction = document.querySelector('.midActionSection');
 
 // 2A {function} check if div.midActionSection is already created.  If it is, do not create.
 const checkForActionSection = () => { //--------after else add "return"
     //sets midAction to the value of the div with class midActionSection
-    const midAction = document.querySelector('.midActionSection');
-    console.log(midAction);
+    const midAction = document.querySelector('.midActionSection');    
     // checks if midAction === null (Happens if there is no div with class midActionSection).  If so, it will create the div, otherwise it will do nothing.
     if (midAction === null) {
         // sets divAction to be a div element
         let divAction = document.createElement('div');
         // sets the class of divAction
-        divAction.setAttribute('class', 'midActionSection');
-        console.log(`midActionSection is not created`);
+        divAction.setAttribute('class', 'midActionSection');        
         // appends divAction to the bottom of .middleSectionContainer
         midContainer.append(divAction)
         // return true
-    } else {
-        console.log(`midActionSection is already created`);
+    } else {        
         // return false
     }
 };
@@ -88,22 +81,17 @@ const checkForActionSection = () => { //--------after else add "return"
 const checkFormSelected = () => {
     // checks if quizGame or organizationHelper radio button is selected.  Sets it to true if selected, false if not.
     let quizRadio = document.getElementById('quizGame').checked;
-    let helperRadio = document.querySelector('#organizationHelper').checked
-    console.log(quizRadio);
-    console.log(helperRadio);
+    let helperRadio = document.querySelector('#organizationHelper').checked        
     //Each form will have it's own function, and called upon based on which part of the if statement is called
-    if (quizRadio === true) {
-        console.log(`quizGame is selected`);
+    if (quizRadio === true) {        
         //--3A. create midActionQuiz
         generateQuiz();
         
-    } else if (helperRadio === true) {
-        console.log(`organizationHelper is selected`);
+    } else if (helperRadio === true) {        
         //-- 3B. create midActionHelper
         generateHelper();
         
-    } else {
-        console.log(`Neither are selected`);
+    } else {        
     }
 };
 
@@ -336,11 +324,7 @@ const whichCharacter = () => {
     legendQuiz.style.color = 'black';
     legendQuiz.style.fontSize = '16px';
     legendQuiz.classList.remove('qLegendStyle');
-
-    console.log(ichigoRadio);
-    console.log(uraharaRadio);
-    console.log(aizenRadio);
-    console.log(tatsukiRadio);
+                
 
     //Each form will have it's own function, and called upon based on which part of the if statement is called
     if (ichigoRadio === true) {
