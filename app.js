@@ -19,7 +19,7 @@
              3B4: {legend} -->
              3B5: {4 labels; 4 inputs}
              3B6: button with an .addeventlistener
-
+4. Use the parent-child-sibling relationship to navigate beween elements at least once
 */
 
 
@@ -30,8 +30,11 @@ const generateTheQuizOrHelper = () => {
     //--2B. checks if quizGame or organizationHelper radio button is selected.  --> creates which one is selected
     checkFormSelected();
 };
-// midActionSection will be created inside of the middleSectionContainer
-let midContainer = document.querySelector(`.middleSectionContainer`);
+// 4. midActionSection will be created inside of the middleSectionContainer
+    // This next line calls for the middleSectionContainer by referencing the
+    // --> next sibling of div.mainSectionContainer
+let midContainer = document.querySelector('.mainSectionContainer').nextElementSibling;
+console.log(midContainer);
 // forms will be created inside the midActionSection
 // let middleAction = document.querySelector('.midActionSection');
 
@@ -118,7 +121,7 @@ let middleAction = document.querySelector('.midActionSection')
     let ichigoQ = document.createElement('input')
     ichigoQ.setAttribute('id', 'ichigoQuiz');
     ichigoQ.setAttribute('type', 'radio');
-    // ichigoQ.setAtrribute('name', 'bleach');
+    ichigoQ.name = 'bleach'
 
     //-----  sets element,attribute, and innerHTML for label:ichigoQuiz
     let ichigoLabel = document.createElement('label');
@@ -129,7 +132,7 @@ let middleAction = document.querySelector('.midActionSection')
     let uraharaQ = document.createElement('input');
     uraharaQ.setAttribute('id', 'uraharaQuiz');
     uraharaQ.setAttribute('type', 'radio');
-    // uraharaQ.setAtrribute('name', 'bleach');
+    uraharaQ.name = 'bleach'
     
     //-----  sets element,attribute, and innerHTML for label:uraharQuiz
     let uraharaLabel = document.createElement('label');
@@ -140,7 +143,7 @@ let middleAction = document.querySelector('.midActionSection')
     let aizenQ = document.createElement('input')
     aizenQ.setAttribute('id', 'aizenQuiz');
     aizenQ.setAttribute('type', 'radio');
-    // aizenQ.setAtrribute('name', 'bleach');
+    aizenQ.name = 'bleach'
 
     //-----  sets element,attribute, and innerHTML for label:aizenQuiz
     let aizenLabel = document.createElement('label');
@@ -151,7 +154,7 @@ let middleAction = document.querySelector('.midActionSection')
     let tatsukiQ = document.createElement('input')
     tatsukiQ.setAttribute('id', 'tatsukiQuiz');
     tatsukiQ.setAttribute('type', 'radio');
-    // tatsukiQ.setAtrribute('name', 'bleach');
+    tatsukiQ.name = 'bleach'
 
     //-----  sets element,attribute, and innerHTML for label:tatsukiQuiz
     let tatsukiLabel = document.createElement('label');
@@ -165,7 +168,7 @@ let middleAction = document.querySelector('.midActionSection')
 
 //-------Work on how to have this work when midActionSection is not already in html
     //------{APPEND section} 
-    middleAction.append(actionQuiz);
+    middleAction.prepend(actionQuiz);
     actionQuiz.append(quizTitle);
     actionQuiz.append(quizForm);
     quizForm.append(qField);
@@ -260,7 +263,7 @@ let middleAction = document.querySelector('.midActionSection')
     helperButton.innerHTML = 'Submit'; 
 
     //------{APPEND section} 
-    middleAction.append(actionHelper);
+    middleAction.prepend(actionHelper);
     actionHelper.append(helperTitle);
     actionHelper.append(helperForm);
     helperForm.append(hField);
