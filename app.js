@@ -31,6 +31,30 @@ const generateTheQuizOrHelper = () => {
     //--2B. checks if quizGame or organizationHelper radio button is selected.  --> creates which one is selected
     checkFormSelected();
 };
+
+//Have user enter their name, and the name of those helping them create a future project with this page.  
+const yourNames = [];
+console.log(yourNames);
+const addNames = () => {
+    yourNames.push(prompt('Enter your name and the name of those that will help you create a webpage in the future'))
+    console.log(yourNames);
+}
+
+const showNames = () => {
+    console.log(yourNames);
+    let mainSection = document.querySelector('.mainSectionContainer');
+    let namesContainer = document.createElement('div');
+    namesContainer.setAttribute('class', 'mainNamesContainer');
+    mainSection.append(namesContainer);
+    yourNames.forEach((name) => {
+        let newNames = document.createElement('p');
+        newNames.setAttribute('class', 'futureEngineer');
+        newNames.innerHTML = `Welcome: ${name},`;
+        namesContainer.append(newNames);
+    });
+}
+
+
 // 4. midActionSection will be created inside of the middleSectionContainer
     // This next line calls for the middleSectionContainer by referencing the
     // --> next sibling of div.mainSectionContainer
@@ -38,7 +62,6 @@ let midContainer = document.querySelector('.mainSectionContainer').nextElementSi
 console.log(midContainer);
 // forms will be created inside the midActionSection
 // let middleAction = document.querySelector('.midActionSection');
-
 
 // 2A {function} check if div.midActionSection is already created.  If it is, do not create.
 const checkForActionSection = () => { //--------after else add "return"
@@ -195,6 +218,9 @@ let middleAction = document.querySelector('.midActionSection')
     
 };
 
+//array to iterate over
+let choiceIds = []
+
 //-- 3B {function} to create midActionHelper
 const generateHelper = () => {
 /* 3B. {div.midActionHelper} -->
@@ -209,16 +235,16 @@ let middleAction = document.querySelector('.midActionSection')
 
 
     //----- sets element and attribute for midActionHelper
-    let actionHelper = document.createElement('div')
+    let actionHelper = window.document.createElement('div')
     actionHelper.setAttribute('class', 'midActionHelper')
 
     //----- sets element,attribute, and innerHTML for .midHelperTitle
-    let helperTitle = document.createElement('h4');
+    let helperTitle = window.document.createElement('h4');
     helperTitle.setAttribute('class', 'midHelperTitle');
     helperTitle.innerHTML = `What chores do you need to prioritize?`;     
     
     //----- sets element,attribute, and innerHTML for .midHelperform
-    let helperForm = document.createElement('form');
+    let helperForm = window.document.createElement('form');
     helperForm.setAttribute('class', 'midHelperForm');
     helperForm.setAttribute('onsubmit', `javascript:alert('Good Job filling out your chores!!!  Now you are ready to start!')`);
     helperForm.addEventListener("change", ()=> {
@@ -226,58 +252,58 @@ let middleAction = document.querySelector('.midActionSection')
     });
 
     //----- sets element,attribute, and innerHTML for fieldset tag
-    let hField = document.createElement('fieldset');
+    let hField = window.document.createElement('fieldset');
 
     //----- sets element,attribute, and innerHTML for legend tag
-    let helperLegend = document.createElement('legend');
+    let helperLegend = window.document.createElement('legend');
     helperLegend.innerHTML = 'Write in some of your chores!'
 
     //----- sets element,attribute, and innerHTML for label:userChore1
-    let labelOne = document.createElement('label');
+    let labelOne = window.document.createElement('label');
     labelOne.setAttribute('for', 'userChores1');
     labelOne.innerHTML = 'Chore 1:'
 
     //----- sets element,attribute, and innerHTML for #userChore1
-    let choiceOne = document.createElement('input')
+    let choiceOne = window.document.createElement('input')
     choiceOne.setAttribute('type', 'text');
     choiceOne.setAttribute('id', 'userChore1')
     choiceOne.setAttribute('required', '')
 
     //----- sets element,attribute, and innerHTML for label:userChore2
-    let labelTwo = document.createElement('label');
+    let labelTwo = window.document.createElement('label');
     labelTwo.setAttribute('for', 'userChores2');
     labelTwo.innerHTML = 'Chore 2:'
 
     //----- sets element,attribute, and innerHTML for #userChore2
-    let choiceTwo = document.createElement('input')
+    let choiceTwo = window.document.createElement('input')
     choiceTwo.setAttribute('type', 'text');
     choiceTwo.setAttribute('id', 'userChore2')
     choiceTwo.setAttribute('required', '')
 
     //----- sets element,attribute, and innerHTML for label:userChore3
-    let labelThree = document.createElement('label');
+    let labelThree = window.document.createElement('label');
     labelThree.setAttribute('for', 'userChores3');
     labelThree.innerHTML = 'Chore 3:'
 
     //----- sets element,attribute, and innerHTML for #userChore3
-    let choiceThree = document.createElement('input')
+    let choiceThree = window.document.createElement('input')
     choiceThree.setAttribute('type', 'text');
     choiceThree.setAttribute('id', 'userChore3')
     choiceThree.setAttribute('required', '')
 
     //----- sets element,attribute, and innerHTML for label:userChore4
-    let labelFour = document.createElement('label');
+    let labelFour = window.document.createElement('label');
     labelFour.setAttribute('for', 'userChores4');
     labelFour.innerHTML = 'Chore 4:'
 
     //----- sets element,attribute, and innerHTML for #userChore4
-    let choiceFour = document.createElement('input')
+    let choiceFour = window.document.createElement('input')
     choiceFour.setAttribute('type', 'text');
     choiceFour.setAttribute('id', 'userChore4') 
     choiceFour.setAttribute('required', '')
 
     //-----  sets element,attribute, and innerHTML for button
-    let helperButton = document.createElement('button');
+    let helperButton = window.document.createElement('button');
     helperButton.setAttribute('type', 'submit');
     helperButton.setAttribute('id', 'helperFormButton')
     helperButton.innerHTML = 'Submit'; 
@@ -331,7 +357,6 @@ const whichCharacter = () => {
         legendQuiz.style.color = 'purple';
         legendQuiz.style.fontSize = "xx-large";
         legendQuiz.innerHTML = "You would be the best character!! TATSUKI!!!";
-
     };
 };
 const alertUser = () => {

@@ -28,6 +28,18 @@ h4{
 .mainSubTitle{
     border: solid blue;
 }
+.mainNamesButtons{
+    border: solid blue;
+    display: flex;
+}
+.mainNamesContainer{
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 32px;
+    color: purple;
+    border: solid blue;
+    justify-content: center;
+}
 .middleSectionContainer{
     border: solid black;
     display: flex;
@@ -94,7 +106,6 @@ h4{
     border: solid green;
 }
 .qLegendStyle{
-    color: gold;
     font-size: xx-large;
     font-family: cursive;
 }
