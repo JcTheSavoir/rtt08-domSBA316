@@ -20,8 +20,9 @@
              3B5: {4 labels; 4 inputs}
              3B6: button with an .addeventlistener
 4. Use the parent-child-sibling relationship to navigate beween elements at least once
-*/
 
+5. Modify the HTML of one element in response to user interaction using innerHTML
+*/
 
 // --1. Button from html, will activate when clicked and user has chosen an example
 const generateTheQuizOrHelper = () => {
@@ -207,8 +208,8 @@ let middleAction = document.querySelector('.midActionSection')
     helperTitle.innerHTML = `What chores do you need to prioritize?`;     
     
     //----- sets element,attribute, and innerHTML for .midHelperform
-    let helperForm = document.createElement('id', 'midHelperForm');
-    helperForm.setAttribute('id', 'midHelperForm');
+    let helperForm = document.createElement('form');
+    helperForm.setAttribute('class', 'midHelperForm');
 
     //----- sets element,attribute, and innerHTML for fieldset tag
     let hField = document.createElement('fieldset');
@@ -277,4 +278,6 @@ let middleAction = document.querySelector('.midActionSection')
     hField.append(labelFour);
     hField.append(choiceFour);
     hField.append(helperButton);
-}
+};
+
+// const whichCharacter
