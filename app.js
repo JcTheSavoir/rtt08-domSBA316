@@ -116,13 +116,15 @@ let middleAction = document.querySelector('.midActionSection')
 
     //-----  sets element,attribute, and innerHTML for legend tag
     let leg = document.createElement('legend');
+    leg.setAttribute('id', 'quizLegend');
     leg.innerHTML = 'Who is your favorite Character';
 
     //-----  sets element,attribute, and innerHTML for #ichigoQuiz
     let ichigoQ = document.createElement('input')
     ichigoQ.setAttribute('id', 'ichigoQuiz');
     ichigoQ.setAttribute('type', 'radio');
-    ichigoQ.name = 'bleach'
+    ichigoQ.name = 'bleach';
+    
 
     //-----  sets element,attribute, and innerHTML for label:ichigoQuiz
     let ichigoLabel = document.createElement('label');
@@ -133,7 +135,8 @@ let middleAction = document.querySelector('.midActionSection')
     let uraharaQ = document.createElement('input');
     uraharaQ.setAttribute('id', 'uraharaQuiz');
     uraharaQ.setAttribute('type', 'radio');
-    uraharaQ.name = 'bleach'
+    uraharaQ.name = 'bleach';
+    
     
     //-----  sets element,attribute, and innerHTML for label:uraharQuiz
     let uraharaLabel = document.createElement('label');
@@ -144,7 +147,8 @@ let middleAction = document.querySelector('.midActionSection')
     let aizenQ = document.createElement('input')
     aizenQ.setAttribute('id', 'aizenQuiz');
     aizenQ.setAttribute('type', 'radio');
-    aizenQ.name = 'bleach'
+    aizenQ.name = 'bleach';
+    
 
     //-----  sets element,attribute, and innerHTML for label:aizenQuiz
     let aizenLabel = document.createElement('label');
@@ -155,7 +159,8 @@ let middleAction = document.querySelector('.midActionSection')
     let tatsukiQ = document.createElement('input')
     tatsukiQ.setAttribute('id', 'tatsukiQuiz');
     tatsukiQ.setAttribute('type', 'radio');
-    tatsukiQ.name = 'bleach'
+    tatsukiQ.name = 'bleach';
+    
 
     //-----  sets element,attribute, and innerHTML for label:tatsukiQuiz
     let tatsukiLabel = document.createElement('label');
@@ -165,7 +170,11 @@ let middleAction = document.querySelector('.midActionSection')
     //-----  sets element,attribute, and innerHTML for button
     let quizButton = document.createElement('button');
     quizButton.setAttribute('type', 'button');
+    quizButton.setAttribute('id', 'quizFormButton')
     quizButton.innerHTML = 'Submit';
+    quizButton.addEventListener("click", ()=> {
+        whichCharacter()
+    });
 
 //-------Work on how to have this work when midActionSection is not already in html
     //------{APPEND section} 
@@ -182,8 +191,9 @@ let middleAction = document.querySelector('.midActionSection')
     qField.append(aizenLabel);
     qField.append(tatsukiQ);
     qField.append(tatsukiLabel);
-    qField.append(quizButton)
-}
+    qField.append(quizButton);
+    
+};
 
 //-- 3B {function} to create midActionHelper
 const generateHelper = () => {
@@ -210,6 +220,10 @@ let middleAction = document.querySelector('.midActionSection')
     //----- sets element,attribute, and innerHTML for .midHelperform
     let helperForm = document.createElement('form');
     helperForm.setAttribute('class', 'midHelperForm');
+    helperForm.setAttribute('onsubmit', `javascript:alert('Good Job filling out your chores!!!  Now you are ready to start!')`);
+    helperForm.addEventListener("change", ()=> {
+        alertUser();
+    });
 
     //----- sets element,attribute, and innerHTML for fieldset tag
     let hField = document.createElement('fieldset');
@@ -227,6 +241,7 @@ let middleAction = document.querySelector('.midActionSection')
     let choiceOne = document.createElement('input')
     choiceOne.setAttribute('type', 'text');
     choiceOne.setAttribute('id', 'userChore1')
+    choiceOne.setAttribute('required', '')
 
     //----- sets element,attribute, and innerHTML for label:userChore2
     let labelTwo = document.createElement('label');
@@ -237,6 +252,7 @@ let middleAction = document.querySelector('.midActionSection')
     let choiceTwo = document.createElement('input')
     choiceTwo.setAttribute('type', 'text');
     choiceTwo.setAttribute('id', 'userChore2')
+    choiceTwo.setAttribute('required', '')
 
     //----- sets element,attribute, and innerHTML for label:userChore3
     let labelThree = document.createElement('label');
@@ -247,6 +263,7 @@ let middleAction = document.querySelector('.midActionSection')
     let choiceThree = document.createElement('input')
     choiceThree.setAttribute('type', 'text');
     choiceThree.setAttribute('id', 'userChore3')
+    choiceThree.setAttribute('required', '')
 
     //----- sets element,attribute, and innerHTML for label:userChore4
     let labelFour = document.createElement('label');
@@ -257,11 +274,14 @@ let middleAction = document.querySelector('.midActionSection')
     let choiceFour = document.createElement('input')
     choiceFour.setAttribute('type', 'text');
     choiceFour.setAttribute('id', 'userChore4') 
+    choiceFour.setAttribute('required', '')
 
     //-----  sets element,attribute, and innerHTML for button
     let helperButton = document.createElement('button');
-    helperButton.setAttribute('type', 'button');
+    helperButton.setAttribute('type', 'submit');
+    helperButton.setAttribute('id', 'helperFormButton')
     helperButton.innerHTML = 'Submit'; 
+    
 
     //------{APPEND section} 
     middleAction.prepend(actionHelper);
@@ -280,4 +300,40 @@ let middleAction = document.querySelector('.midActionSection')
     hField.append(helperButton);
 };
 
-// const whichCharacter
+const whichCharacter = () => {
+    // checks if which radio button is selected.  Sets it to true if selected, false if not.
+    let ichigoRadio = document.getElementById('ichigoQuiz').checked;
+    let uraharaRadio = document.getElementById('uraharaQuiz').checked;
+    let aizenRadio = document.getElementById('aizenQuiz').checked;
+    let tatsukiRadio = document.getElementById('tatsukiQuiz').checked;
+    let legendQuiz = document.getElementById('quizLegend');
+    legendQuiz.style.color = 'black';
+    legendQuiz.style.fontSize = '16px';
+    legendQuiz.classList.remove('qLegendStyle');
+
+    console.log(ichigoRadio);
+    console.log(uraharaRadio);
+    console.log(aizenRadio);
+    console.log(tatsukiRadio);
+
+    //Each form will have it's own function, and called upon based on which part of the if statement is called
+    if (ichigoRadio === true) {
+        legendQuiz.innerHTML = "You would be Ichigo!!!";
+        legendQuiz.style.color = 'gold';
+        legendQuiz.style.fontSize = 'xx-large';
+        legendQuiz.classList.toggle('qLegendStyle');
+       
+    } else if (uraharaRadio === true) {
+        legendQuiz.innerHTML = "You would be Urahar!!!";
+    } else if (aizenRadio === true) {
+        legendQuiz.innerHTML = "You would be Aizen!!!";
+    } else if (tatsukiRadio === true){
+        legendQuiz.style.color = 'purple';
+        legendQuiz.style.fontSize = "xx-large";
+        legendQuiz.innerHTML = "You would be the best character!! TATSUKI!!!";
+
+    };
+};
+const alertUser = () => {
+        alert("Good job, keep filling these out!")
+};

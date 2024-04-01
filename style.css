@@ -19,6 +19,7 @@ h4{
     border: solid black;
     display: flex;
     flex-flow:column;
+    font-size: xx-large;
     align-items: center;
 }
 .mainTitle{
@@ -91,4 +92,9 @@ h4{
 }
 .midHelperForm{
     border: solid green;
+}
+.qLegendStyle{
+    color: gold;
+    font-size: xx-large;
+    font-family: cursive;
 }
